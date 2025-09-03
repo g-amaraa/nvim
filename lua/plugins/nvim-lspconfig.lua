@@ -18,5 +18,41 @@ return {
 	config = function()
 		require("utils.diagnostics").setup()
 		require("servers")
+		require('mason-tool-installer').setup({
+			ensure_installed = {
+				{ 'bash-language-server', auto_update = true },
+				'gofumpt',
+				'revive',
+				'solhint',
+				'prettierd',
+				'lua-language-server',
+				'luacheck',
+				'stylua',
+				'flake8',
+				'black',
+				'emmet-ls',
+				'eslint_d',
+				'json-lsp',
+				'fixjson',
+				'shellcheck',
+				'shfmt',
+				'hadolint',
+				'cpplint',
+				'clang-format',
+				'efm',
+				'sqls',
+				'typescript-language-server',
+				'tailwindcss-language-server',
+				'dotenv-linter',
+				'svelte-language-server'
+			},
+			auto_update = false,
+			run_on_start = true,
+			integrations = {
+				['mason-lspconfig'] = true,
+				['mason-null-ls'] = true,
+				['mason-nvim-dap'] = true,
+			},
+		})
 	end,
 }
