@@ -1,8 +1,8 @@
 -- ================================================================================================
--- TITLE : melange-nvim
+-- TITLE : kanagawa.nvim
 -- ABOUT : A subtle, warm colorscheme for Neovim inspired by Sublime Text's Melange theme.
 -- LINKS :
---   > github : https://github.com/savq/melange-nvim
+--   > github : https://github.com/rebelot/kanagawa.nvim
 -- ================================================================================================
 
 return {
