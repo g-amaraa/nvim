@@ -5,13 +5,13 @@
 
 -- Basic Settings
 vim.opt.number = true -- Line numbers
-vim.opt.relativenumber = true -- Relative line numbers
+vim.opt.relativenumber = false -- Relative line numbers
 vim.opt.cursorline = true -- Highlight current line
 vim.opt.scrolloff = 10 -- Keep 10 lines above/below cursor
 vim.opt.sidescrolloff = 8 -- Keep 8 columns left/right of cursor
-vim.opt.wrap = false -- Don't wrap lines
+vim.opt.wrap = true -- Don't wrap lines
 vim.opt.cmdheight = 1 -- Command line height
-vim.opt.spelllang = { "en", "de" } -- Set language for spellchecking
+vim.opt.spelllang = { "en" } -- Set language for spellchecking
 
 -- Tabbing / Indentation
 vim.opt.tabstop = 2 -- Tab width
