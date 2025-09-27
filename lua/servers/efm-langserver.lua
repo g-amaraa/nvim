@@ -10,7 +10,7 @@
 --- @param capabilities table LSP client capabilities (from nvim-cmp)
 --- @param on_attach function Callback function executed when LSP attaches to a buffer
 --- @return nil
-return function(lspconfig, capabilities, on_attach)
+return function(capabilities, on_attach)
 	local luacheck = require("efmls-configs.linters.luacheck") -- lua linter
 	local stylua = require("efmls-configs.formatters.stylua") -- lua formatter
 	local flake8 = require("efmls-configs.linters.flake8") -- python linter
@@ -27,7 +27,7 @@ return function(lspconfig, capabilities, on_attach)
 	local clangformat = require("efmls-configs.formatters.clang_format") -- c/cpp formatter
 	local solhint = require("efmls-configs.linters.solhint") -- solidity linter
 
-	lspconfig.efm.setup({
+	vim.lsp.config.efm = {
 		on_attach = on_attach,
 		capabilities = capabilities,
 		filetypes = {
@@ -82,5 +82,5 @@ return function(lspconfig, capabilities, on_attach)
 				vue = { eslint_d, prettier_d },
 			},
 		},
-	})
+	}
 end
