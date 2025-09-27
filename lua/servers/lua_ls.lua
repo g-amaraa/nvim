@@ -9,7 +9,7 @@
 --- @param on_attach function Callback function executed when LSP attaches to a buffer
 --- @return nil
 return function(capabilities, on_attach)
-	lspconfig.lua_ls = {
+	vim.lsp.config.lua_ls = {
 		capabilities = capabilities,
 		on_attach = on_attach,
 		settings = {
