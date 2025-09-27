@@ -8,8 +8,8 @@
 --- @param capabilities table LSP client capabilities (typically from nvim-cmp or similar)
 --- @param on_attach function Callback function executed when LSP attaches to a buffer
 --- @return nil
-return function(lspconfig, capabilities, on_attach)
-	lspconfig.ts_ls.setup({
+return function(capabilities, on_attach)
+	vim.lsp.config.ts_ls = {
 		on_attach = on_attach,
 		capabilities = capabilities,
 		filetypes = {
@@ -24,5 +24,5 @@ return function(lspconfig, capabilities, on_attach)
 				indentSize = 2,
 			},
 		},
-	})
+	}
 end
