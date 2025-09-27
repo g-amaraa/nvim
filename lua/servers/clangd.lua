@@ -8,8 +8,8 @@
 --- @param capabilities table LSP client capabilities (typically from nvim-cmp or similar)
 --- @param on_attach function Callback function executed when LSP attaches to a buffer
 --- @return nil
-return function(lspconfig, capabilities, on_attach)
-	lspconfig.clangd.setup({
+return function(capabilities, on_attach)
+	vim.lsp.config.clangd = {
 		capabilities = capabilities,
 		on_attach = on_attach,
 		cmd = {
@@ -17,5 +17,5 @@ return function(lspconfig, capabilities, on_attach)
 			"--offset-encoding=utf-16",
 		},
 		filetypes = { "c", "cpp" },
-	})
+	}
 end
