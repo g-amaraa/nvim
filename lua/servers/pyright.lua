@@ -8,8 +8,8 @@
 --- @param capabilities table LSP client capabilities (typically from nvim-cmp or similar)
 --- @param on_attach function Callback function executed when LSP attaches to a buffer
 --- @return nil This function doesn't return a value, it configures the LSP server
-return function(lspconfig, capabilities, on_attach)
-	lspconfig.pyright.setup({
+return function(capabilities, on_attach)
+	vim.lsp.config.pyright = {
 		capabilities = capabilities,
 		on_attach = on_attach,
 		settings = {
@@ -23,5 +23,5 @@ return function(lspconfig, capabilities, on_attach)
 				},
 			},
 		},
-	})
+	}
 end
