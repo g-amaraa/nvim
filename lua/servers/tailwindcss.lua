@@ -8,8 +8,8 @@
 --- @param capabilities table LSP client capabilities (typically from nvim-cmp or similar)
 --- @param on_attach function Callback function executed when LSP attaches to a buffer
 --- @return nil
-return function(lspconfig, capabilities, on_attach)
-	lspconfig.tailwindcss.setup({
+return function(capabilities, on_attach)
+	vim.lsp.config.tailwindcss = {
 		capabilities = capabilities,
 		on_attach = on_attach,
 		filetypes = {
@@ -20,5 +20,5 @@ return function(lspconfig, capabilities, on_attach)
 			"vue",
 			"svelte",
 		},
-	})
+	}
 end
