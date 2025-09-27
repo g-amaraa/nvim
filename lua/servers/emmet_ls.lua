@@ -9,8 +9,8 @@
 --- @param capabilities table LSP client capabilities (typically from nvim-cmp or similar)
 --- @param on_attach function Callback function executed when LSP attaches to a buffer
 --- @return nil
-return function(lspconfig, capabilities, on_attach)
-	lspconfig.emmet_ls.setup({
+return function(capabilities, on_attach)
+	vim.lsp.config.emmet_ls = {
 		capabilities = capabilities,
 		on_attach = on_attach,
 		filetypes = {
@@ -24,5 +24,5 @@ return function(lspconfig, capabilities, on_attach)
 			"svelte",
 			"vue",
 		},
-	})
+	}
 end
