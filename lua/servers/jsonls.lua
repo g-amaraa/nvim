@@ -9,7 +9,7 @@
 --- @param on_attach function Callback function executed when LSP attaches to a buffer
 --- @return nil
 return function(capabilities, on_attach)
-	lspconfig.jsonls = {
+	vim.lsp.config.jsonls = {
 		capabilities = capabilities,
 		on_attach = on_attach,
 		filetypes = { "json", "jsonc" },
